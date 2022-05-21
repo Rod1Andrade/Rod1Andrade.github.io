@@ -1,3 +1,12 @@
+.typewriter
+    overflow: hidden
+    border-right: .15em solid orange
+    white-space: nowrap
+    animation: typing 3.5s steps(40, end),blink-caret .75s step-end infinite
+.active
+    text-style: bold
+    background-color: #2E2E2E
+
 header
     padding: 1.5em
     display: flex
@@ -19,9 +28,6 @@ header
                 padding: .8em
             :hover
                 background-color: #2E2E2E
-            :active
-                text-style: bold
-                background-color: #2E2E2E
 
 main
     display: flex
@@ -41,3 +47,17 @@ main
             font-weight: bold
     article p 
         color: #b1b1b1
+        text-align: justify
+
+@keyframes typing 
+    from
+        width: 0 
+    to 
+        width: 100% 
+
+@keyframes blink-caret
+    from,to
+        border-color: transparent
+    50%
+        border-color: orange
+    
