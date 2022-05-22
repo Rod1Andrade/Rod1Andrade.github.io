@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   public getLastProjects(quantity: number = 4): any[] {
     return this.githubProjects
       .filter(value => value.stargazers_count > 0)
+      .slice(0, quantity)
   }
 
   public openSnackBar(message: string, action: string) {

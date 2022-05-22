@@ -7,7 +7,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import { faCopy, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,7 +44,8 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
       faCopy,
-      faArrowUpRightFromSquare
+      faArrowUpRightFromSquare,
+      faEnvelope
     )
   }
 
