@@ -7,8 +7,8 @@
     <ul>
       <li><a href="#" class="active">Boas Vindas</a></li>
       <li><a href="#">Sobre</a></li>
-      <li><a href="#">Projetos</a></li>
       <li><a href="#">Ferramentas</a></li>
+      <li><a href="assets/storage/Currículo - Rodrigo Andrade.pdf" target="_blank">Currículo</a></li>
     </ul>
   </nav>
 </header>
@@ -20,20 +20,77 @@
         por tecnologia, aprendizado e soluções.
       </h1>
     </header>
-    <article>
+    <article id="resume">
       <p>
-        Eu sou <a>Rodrigo Andrade</a>, um Desenvolvedor fullstack que vem ganhando experiência no mercado.
+        Eu sou <a matTooltip="github" href="https://github.com/Rod1Andrade" target="_blank">Rodrigo Andrade</a>, um Desenvolvedor fullstack que vem ganhando experiência no mercado.
         Estou me especialisando na stack Java + Angular, baseando meu desenvolvimento em soluções web,
         porém um curioso em tecnologias mobiles, aplicações CLI e desenvolvimento de jogos.
       </p>
       <br>
-      <br>
       <p>
-        Atualmente trabalho na <a>Stefanini IT Solutions</a> com a senioridade de Jr, uma empresa incrível que
-        tem me possibilitado melhorar minhas habilidades, tanto soft skill quanto hard skills.
+        Atualmente trabalho na <a matTooltip="Site da empresa  onde eu trabalho" href="https://stefanini.com/" target="_blank">Stefanini IT Solutions</a> com a senioridade de Jr, uma empresa incrível que
+        tem possibilitado melhorar minhas habilidades, tanto soft skill quanto hard skills.
         Esta empresa tem fortificado a minha paixão por tecnologia, auto gestão e desenvolvimento ágil, me colocando
         mais perto do sonho de me especializar e de se tornar referência como um Desenvolvedor.
       </p>
+      <br>
+      <br>
+      <section id="where-found-me">
+        <h2>Onde me encontrar?</h2>
+        <br>
+        <p>
+          Sinta-se livre para me seguir nas redes sociais e entrar em contato comigo, sou bem amigável e gosto de
+          interagir
+          com a comunidade de desenvolvedores e apaixonados por tecnologia.
+        </p>
+        <br>
+        <ul id="social-medias">
+          <li><a href="https://www.linkedin.com/in/rod1dev/" target="blank"><img
+                src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+          </li>
+          <li><a href="https://www.twitch.tv/rod1dev" target="blank"><img
+                src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white"></a>
+          </li>
+          <li><a href="https://twitter.com/rod1dev/" target="blank"><img
+                src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a>
+          </li>
+
+        </ul>
+      </section>
+    </article>
+    <br>
+    <br>
+    <hr>
+    <article id="personal-projects">
+      <h2>Últimos Projetos Pessoais</h2>
+      <section>
+        <div class="pesonal-projects-item" *ngFor="let el of getLastProjects()">
+          <div class="pesonal-projects-item-about">
+            <div class="pesonal-projects-item-about-title">
+              <h3>{{el.name | RemoveUnderscore }}</h3>
+              <div class="action-icons">
+                <fa-icon matTooltip="Abrir no github" [icon]="['fas', 'arrow-up-right-from-square']" ngClass="fa-icon"
+                  (click)="openOnGithub(el.html_url)"></fa-icon>
+                <fa-icon matTooltip="Clonar repositorio" [icon]="['far', 'copy']" ngClass="fa-icon"
+                  cdkCopyToClipboard='git clone {{el.clone_url}}'
+                  (click)="openSnackBar('Copiado para área de transferência!','x')"></fa-icon>
+              </div>
+            </div>
+            <p class="pesonal-projects-item-about-description">{{el.description}}</p>
+          </div>
+          <div class="pesonal-projects-item-footer">
+            <div class="date-info">
+              <span>{{el.created_at | date: 'dd/MM/yyyy'}}</span>
+            </div>
+            <language-info language="{{el.language}}"></language-info>
+            <!-- <div class="language-info">
+              <span>
+                {{el.language}}
+              </span>
+            </div> -->
+          </div>
+        </div>
+      </section>
     </article>
   </section>
 </main>
