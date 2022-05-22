@@ -42,22 +42,34 @@
           <div class="pesonal-projects-item-about">
             <div class="pesonal-projects-item-about-title">
               <h3>{{el.name | RemoveUnderscore }}</h3>
-              <fa-icon 
+              <div class="action-icons">
+                <fa-icon 
+                matTooltip="Abrir no github"
+                [icon]="['fas', 'arrow-up-right-from-square']"
+                ngClass="fa-icon"
+                (click)="openOnGithub(el.html_url)"
+                ></fa-icon>
+                <fa-icon 
                 matTooltip="Clonar repositorio"
                 [icon]="['far', 'copy']"
                 ngClass="fa-icon"
                 cdkCopyToClipboard='git clone {{el.clone_url}}'
-                (click)="openSnackBar('Copiado!','x')"
+                (click)="openSnackBar('Copiado para área de transferência!','x')"
                 ></fa-icon>
+              </div>
             </div>
-            <p>{{el.description}}</p>
+            <p class="pesonal-projects-item-about-description">{{el.description}}</p>
           </div>
           <div class="pesonal-projects-item-footer">
-            <ul>
-              <li><b>Linguagem:</b> {{el.language}}</li>
-              <li><b>Criado em:</b> {{el.created_at | date: 'dd/MM/yyyy - hh:mm:ss aaa'}}</li>
-              <li><b>Última atualização:</b> {{el.updated_at | date: 'dd/MM/yyyy - hh:mm:ss aaa'}}</li>
-            </ul>
+            <div class="date-info">
+              <span>{{el.created_at | date: 'dd/MM/yyyy'}}</span>
+            </div>
+            <language-info language="{{el.language}}"></language-info>
+            <!-- <div class="language-info">
+              <span>
+                {{el.language}}
+              </span>
+            </div> -->
           </div>
         </div>
       </section>

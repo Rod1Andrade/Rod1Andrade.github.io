@@ -1,3 +1,4 @@
+/* Classes indepententes */
 .typewriter
     overflow: hidden
     border-right: .15em solid orange
@@ -10,7 +11,6 @@
     cursor: pointer
 .fa-icon:hover
     color: #2C7BDE
-
 header
     padding: 1.5em
     display: flex
@@ -54,11 +54,8 @@ main
         text-align: justify
     #personal-projects
         margin-top: 50px
-        display: flex
-        .pesonal-projects-item-about-title
-            justify-content: space-between
-            display: flex
-            flex-direction: row
+        display: grid
+        grid-template-columns: 1fr 3fr
         .pesonal-projects-item
             display: flex
             flex-direction: column
@@ -67,10 +64,38 @@ main
             background-color: #2E2E2E
             border: 1em
             border-radius: .3em
-            .pesonal-projects-item-about h3
+        .pesonal-projects-item-about
+            margin-bottom: .8em
+            h3
                 text-transform: capitalize
-.blue
-    color: blue
+            .pesonal-projects-item-about-title
+                justify-content: space-between
+                display: flex
+                flex-direction: row
+                margin-bottom: 1.5em
+                .action-icons
+                    width: 50px
+                    display: flex
+                    justify-content: space-evenly
+            .pesonal-projects-item-about-description
+                font-size: 13px
+        .pesonal-projects-item-footer
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            margin-top: 1em
+            .date-info
+                font-size: 12px
+                font-style: italic
+            .language-info
+                padding: .2em .5em
+                background-color: #FF9900
+                color: black
+                font-weight: bold
+                border: 1em
+                border-radius: .2em
+       
+                
 /*Animacoes que compoem o typewriter*/
 @keyframes typing 
     from

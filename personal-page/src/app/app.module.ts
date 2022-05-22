@@ -8,12 +8,14 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GitHubAPIService } from './services/api/github.api.service';
 import { RemoveUnderscorePipe } from './utils/pipes/remove-underscore.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageInfoModule } from './components/language-info/language-info.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     NoopAnimationsModule,
     MatTooltipModule, 
     ClipboardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LanguageInfoModule
   ],
   providers: [
     GitHubAPIService,
@@ -39,7 +42,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule {
 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faCopy)
+    library.addIcons(
+      faCopy,
+      faArrowUpRightFromSquare
+    )
   }
 
 }

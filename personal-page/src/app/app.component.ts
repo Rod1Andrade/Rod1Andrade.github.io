@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { GitHubAPIService } from './services/api/github.api.service';
 
 @Component({
@@ -24,18 +24,15 @@ export class AppComponent implements OnInit {
   }
 
   public getLastProjects(quantity: number = 4): any[] {
-    return this.githubProjects.slice(
-      0,
-      quantity
-    ).reverse()
+    return this.githubProjects
+      .filter(value => value.stargazers_count > 0)
   }
 
-  public foo(element: any) {
-    console.log('called')
-    console.log(element)
-  }
-
-  openSnackBar(message: string, action: string) {
+  public openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
+  }
+
+  public openOnGithub(link: string) {
+    window.open(link, "_blank")
   }
 }
