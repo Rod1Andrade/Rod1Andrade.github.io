@@ -6,6 +6,10 @@
 .active
     text-style: bold
     background-color: #2E2E2E
+.fa-icon
+    cursor: pointer
+.fa-icon:hover
+    color: #2C7BDE
 
 header
     padding: 1.5em
@@ -45,10 +49,28 @@ main
             margin-inline-start: 0px
             margin-inline-end: 0px
             font-weight: bold
-    article p 
+    #resume p 
         color: #b1b1b1
         text-align: justify
-
+    #personal-projects
+        margin-top: 50px
+        display: flex
+        .pesonal-projects-item-about-title
+            justify-content: space-between
+            display: flex
+            flex-direction: row
+        .pesonal-projects-item
+            display: flex
+            flex-direction: column
+            padding: .5em
+            margin-bottom: 10px
+            background-color: #2E2E2E
+            border: 1em
+            border-radius: .3em
+            .pesonal-projects-item-about h3
+                text-transform: capitalize
+.blue
+    color: blue
 /*Animacoes que compoem o typewriter*/
 @keyframes typing 
     from
@@ -61,4 +83,3 @@ main
         border-color: transparent
     50%
         border-color: orange
-    
