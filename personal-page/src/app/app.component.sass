@@ -21,9 +21,13 @@ header
         border-bottom: .1em solid #6C6C6C
         span
             font-weight: bold
-    nav ul
-        display: flex
-        flex-direction: row
+    nav 
+        fa-icon
+            visibility: hidden
+        ul
+            max-width: 750px
+            display: flex
+            flex-direction: row
         li
             padding: .1em .3em
             a
@@ -38,6 +42,7 @@ main
     flex-direction: column
     align-items: center
     max-width: 880px
+    padding: 50px
     margin-left: auto
     margin-right: auto
     header
@@ -102,7 +107,34 @@ main
                 border: 1em
                 border-radius: .2em
        
-                
+#sidenav
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    background: black
+    width: 400px
+    #header
+        display: flex
+        flex-direction: row-reverse
+        margin-right: 1em
+        margin-top: .5em
+        fa-icon
+            cursor: pointer
+    ul
+        margin-top: 2em
+        margin-left: 2em
+        margin-right: 2em
+        li
+            padding: .3em
+            padding: .8em
+            border: .1em
+            border-radius: .3em
+            margin-bottom: 1.5em
+        li:hover
+            background-color: #2E2E2E
+            cursor: pointer
+
 /*Animacoes que compoem o typewriter*/
 @keyframes typing 
     from
@@ -115,3 +147,31 @@ main
         border-color: transparent
     50%
         border-color: orange
+
+/* media queries */
+@media screen and (max-width: 750px)
+    #top-header
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        nav 
+            fa-icon
+                visibility: visible
+                font-size: 1.6em
+                cursor: pointer
+            ul
+                visibility: hidden
+                display: none
+    main
+        max-width: max-content
+        padding: 50px
+        #personal-projects
+            display: grid
+            grid-template-columns: 1fr
+            h2
+                margin-bottom: 2em
+
+@media screen and (min-width: 751px)
+    #sidenav
+        visibility: hidden
+        display: none

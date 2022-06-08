@@ -1,9 +1,10 @@
-<header>
+<header id="top-header">
   <div id="logo">
     <span>Rod1Andrade</span>
     <p class="typewriter">Dev. Java & Angular</p>
   </div>
   <nav>
+    <fa-icon [icon]="['fas', 'bars']" (click)="openSideNav()"></fa-icon>
     <ul>
       <li><a href="#" class="active">Boas Vindas</a></li>
       <li><a href="#">Sobre</a></li>
@@ -46,13 +47,13 @@
         <br>
         <ul id="social-medias">
           <li><a href="https://www.linkedin.com/in/rod1dev/" target="blank"><img
-                src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+                src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkding"></a>
           </li>
           <li><a href="https://www.twitch.tv/rod1dev" target="blank"><img
-                src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white"></a>
+                src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" alt="twitch"></a>
           </li>
           <li><a href="https://twitter.com/rod1dev/" target="blank"><img
-                src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a>
+                src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter"></a>
           </li>
 
         </ul>
@@ -83,11 +84,6 @@
               <span>{{el.created_at | date: 'dd/MM/yyyy'}}</span>
             </div>
             <language-info language="{{el.language}}"></language-info>
-            <!-- <div class="language-info">
-              <span>
-                {{el.language}}
-              </span>
-            </div> -->
           </div>
         </div>
       </section>
@@ -95,3 +91,15 @@
   </section>
 </main>
 <router-outlet></router-outlet>
+
+<div id="sidenav" *ngIf="showSideNav">
+  <div id="header">
+    <fa-icon [icon]="['fas', 'xmark']" (click)="closeSideNav()"></fa-icon>
+  </div>
+  <ul>
+    <li><a href="#">Boas Vindas</a></li>
+    <li><a href="#">Sobre</a></li>
+    <li><a href="#">Ferramentas</a></li>
+    <li><a href="assets/storage/Currículo - Rodrigo Andrade.pdf" target="_blank">Currículo</a></li>
+  </ul>
+</div>
