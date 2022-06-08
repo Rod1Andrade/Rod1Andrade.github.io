@@ -10,6 +10,7 @@ import { GitHubAPIService } from './services/api/github.api.service';
 export class AppComponent implements OnInit {
 
   private githubProjects: any[] = []
+  public showSideNav = false
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -35,5 +36,13 @@ export class AppComponent implements OnInit {
 
   public openOnGithub(link: string) {
     window.open(link, "_blank")
+  }
+
+  public closeSideNav(): void {
+    this.showSideNav = false
+  }
+
+  public openSideNav(): void {
+    this.showSideNav = true
   }
 }

@@ -8,7 +8,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCopy, faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +45,9 @@ export class AppModule {
     library.addIcons(
       faCopy,
       faArrowUpRightFromSquare,
-      faEnvelope
+      faEnvelope,
+      faBars,
+      faXmark
     )
   }
 
